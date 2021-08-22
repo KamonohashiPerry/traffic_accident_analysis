@@ -1,0 +1,4 @@
+*.pickle
+src/*.sav
+*.ipynb_checkpoints
+*.DS_Store
