@@ -9,15 +9,18 @@ from decimal import Decimal, ROUND_HALF_UP
 
 
 def multiple_replace(text, adict):
+    '''
+    複数の文字列を指定して置換する関数
+    '''
     rx = re.compile('|'.join(adict))
     def dedictkey(text):
         for key in adict.keys():
             if re.search(key, text):
                 return key
- 
+
     def one_xlat(match):
         return adict[dedictkey(match.group(0))]
- 
+
     return rx.sub(one_xlat, text)
 
 def dms2deg(dms):    
